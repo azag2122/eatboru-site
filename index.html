@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bōru · Fresh, healthy, filling rice bowls · Opening 2027 in the UAE</title>
+<meta name="description" content="Fresh Asian rice bowls, made to order. Healthy and filling. Dine-in and takeaway. Opening 2027 in the UAE.">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<!-- Concept C2: playful, polished. Static draft, not deployed.
+     -->
+<style>
+@font-face{font-family:"Jost";src:url(assets/fonts/Jost.woff2) format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"Cormorant";src:url(assets/fonts/Cormorant.woff2) format("woff2");font-weight:300 700;font-display:swap}
+@font-face{font-family:"Cormorant";src:url(assets/fonts/Cormorant-Italic.woff2) format("woff2");font-weight:300 700;font-style:italic;font-display:swap}
+@font-face{font-family:"Kana";src:url(assets/fonts/NotoSerifJP-kana.woff2) format("woff2");font-display:swap}
+
+:root{--natt:#09182F;--ris:#F2E1CF;--ris2:#F7ECDF;--sage:#7E9275;--pers:#D4553A;
+  --pad:clamp(20px,5vw,80px);--r:28px;--sh:0 30px 50px -20px rgba(9,24,47,.45)}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--ris);color:var(--natt);font-family:Jost,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}a{color:inherit;text-decoration:none}
+.eyebrow{font-weight:600;font-size:15px;letter-spacing:.2em;text-transform:uppercase}
+.wrap{max-width:1440px;margin:0 auto;padding:0 var(--pad)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;height:calc(100svh - 68px);min-height:700px;max-height:960px;overflow:hidden;
+  background:linear-gradient(90deg,var(--ris) 0 56%,var(--sage) 56% 100%)}
+.nav{position:absolute;z-index:5;inset:0 0 auto 0;display:flex;align-items:center;padding:30px var(--pad)}
+.nav__logo{height:40px;width:auto}
+.nav__links{margin-left:auto;display:flex;align-items:center;gap:40px;font-weight:500;font-size:17px}
+.nav__links a:not(.btn){position:relative}
+.nav__links a:not(.btn)::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:currentColor;transform:scaleX(0);transition:transform .25s}
+.nav__links a:not(.btn):hover::after{transform:scaleX(1)}
+.btn{display:inline-flex;align-items:center;gap:12px;height:56px;padding:0 30px;border-radius:999px;font-weight:600;font-size:17px;transition:transform .2s,background .2s,color .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn--navy{background:var(--natt);color:var(--ris)}
+.btn--line{border:2px solid var(--natt)}
+.btn--line:hover{background:var(--natt);color:var(--ris)}
+.btn--ris{background:var(--ris);color:var(--natt)}
+.btn .arr{display:inline-block;transition:transform .2s}.btn:hover .arr{transform:translateX(4px)}
+
+.hero__text{position:absolute;z-index:3;left:var(--pad);top:50%;transform:translateY(-46%);width:min(40vw,580px)}
+.hero__text .eyebrow{display:flex;align-items:center;gap:12px;color:var(--pers)}
+.hero__text .eyebrow::before{content:"";width:34px;height:2px;background:currentColor}
+h1{margin:26px 0 0;font-weight:800;font-size:clamp(64px,8.9vw,132px);line-height:.88;letter-spacing:-.04em}
+h1 em{font-style:normal;color:var(--pers)}
+.sub{margin:32px 0 40px;font-size:21px;line-height:1.5;max-width:23em}
+.ctas{display:flex;gap:14px;flex-wrap:wrap}
+
+.bowl{position:absolute;z-index:2;width:min(46vw,680px);left:47.5%;top:56%;transform:translateY(-50%) rotate(8deg);
+  filter:drop-shadow(0 50px 50px rgba(9,24,47,.38)) drop-shadow(0 12px 16px rgba(9,24,47,.22))}
+.seal{position:absolute;z-index:4;right:calc(var(--pad) - 10px);bottom:40px;width:172px;height:172px;animation:spin 40s linear infinite}
+.seal svg{display:block;width:100%;height:100%}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.band{background:var(--pers);color:var(--ris);overflow:hidden;white-space:nowrap;height:68px;display:flex;align-items:center}
+.band div{display:inline-flex;gap:36px;font-weight:700;font-size:22px;letter-spacing:.08em;text-transform:uppercase;animation:mq 36s linear infinite}
+.band span{display:inline-flex;align-items:center;gap:36px}
+.band span::after{content:"";width:9px;height:9px;border-radius:50%;background:var(--natt)}
+@keyframes mq{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.band div,.seal{animation:none}}
+
+/* ---------- pillars ---------- */
+.pillars{background:var(--natt);color:var(--ris);padding:clamp(90px,9vw,140px) 0 clamp(90px,9vw,140px)}
+.head{display:grid;grid-template-columns:1.6fr 1fr;gap:60px;align-items:end}
+.head .eyebrow{color:var(--sage);margin-bottom:22px}
+h2{margin:0;font-weight:800;font-size:clamp(46px,6.2vw,92px);line-height:.92;letter-spacing:-.035em}
+.head p{margin:0;font-size:21px;line-height:1.55;color:rgba(242,225,207,.82);max-width:22em}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin:150px 0 0;padding:0;list-style:none}
+.card{position:relative;border-radius:var(--r);padding:0 36px 38px;display:flex;flex-direction:column;min-height:460px;box-shadow:var(--sh)}
+.card img{width:78%;height:300px;object-fit:contain;margin:-110px auto 0;filter:drop-shadow(0 26px 22px rgba(9,24,47,.4))}
+.card:nth-child(1){background:var(--pers);color:var(--ris)}
+.card:nth-child(2){background:var(--sage);color:var(--natt)}
+.card:nth-child(3){background:var(--ris);color:var(--natt)}
+.card:nth-child(1) img{transform:rotate(-7deg)}.card:nth-child(2) img{transform:rotate(5deg)}.card:nth-child(3) img{transform:rotate(-3deg)}
+.card .n{font-weight:600;font-size:15px;letter-spacing:.2em;opacity:.7;margin-top:auto;padding-top:30px}
+.card h3{margin:10px 0 0;font-weight:800;font-size:clamp(40px,3.9vw,58px);line-height:.95;letter-spacing:-.03em}
+.card p{margin:12px 0 0;font-size:19px;line-height:1.45;font-weight:500;max-width:17em}
+
+/* ---------- how it works ---------- */
+.how{background:var(--ris);padding:clamp(90px,9vw,140px) 0}
+.how__grid{display:grid;grid-template-columns:1fr minmax(0,560px);gap:clamp(40px,7vw,110px);align-items:center}
+.how .eyebrow{color:var(--pers);margin-bottom:22px}
+.how__lead{margin:26px 0 0;font-size:21px;line-height:1.55;color:rgba(9,24,47,.78);max-width:24em}
+.steps{margin:48px 0 0;padding:0;list-style:none;border-top:2px solid rgba(9,24,47,.12)}
+.step{display:flex;gap:26px;align-items:center;padding:26px 0;border-bottom:2px solid rgba(9,24,47,.12)}
+.step b{flex:none;display:grid;place-items:center;width:60px;height:60px;border-radius:50%;background:var(--natt);color:var(--ris);font-size:22px;font-weight:700}
+.step:nth-child(2) b{background:var(--sage);color:var(--natt)}.step:nth-child(3) b{background:var(--pers)}
+.step h3{margin:0;font-weight:700;font-size:30px;line-height:1.1;letter-spacing:-.02em}
+.step p{margin:4px 0 0;font-size:19px;line-height:1.45;color:rgba(9,24,47,.75)}
+.how__photo{position:relative;margin:0}
+.how__photo img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r);box-shadow:var(--sh)}
+.how__photo figcaption{position:absolute;left:24px;bottom:24px;background:var(--ris);color:var(--natt);font-weight:600;font-size:17px;padding:12px 22px;border-radius:999px}
+
+/* ---------- footer ---------- */
+.foot{background:var(--natt);color:var(--ris);padding:clamp(80px,8vw,120px) 0 40px}
+.foot__top{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap}
+.foot h2 em{font-style:normal;color:var(--pers)}
+.foot__contact{display:flex;flex-direction:column;gap:14px;font-size:21px}
+.foot__contact a{border-bottom:2px solid rgba(242,225,207,.25);padding-bottom:4px;align-self:flex-start}
+.foot__contact a:hover{border-color:var(--pers)}
+.foot__bar{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:90px;padding-top:30px;border-top:1px solid rgba(242,225,207,.16);font-size:16px;color:rgba(242,225,207,.7)}
+.foot__bar img{height:34px;width:auto}
+
+/* ---------- mobile ---------- */
+@media (max-width:820px){
+  .hero{height:auto;min-height:0;max-height:none;background:linear-gradient(180deg,var(--ris) 0 calc(100% - 250px),var(--sage) calc(100% - 250px));padding:112px 0 0}
+  .nav{padding:22px var(--pad)}.nav__logo{height:32px}
+  .nav__links a:not(.btn){display:none}
+  .nav .btn{height:46px;padding:0 20px;font-size:16px}
+  .hero__text{position:relative;left:auto;top:auto;transform:none;width:auto;padding:0 var(--pad)}
+  h1{font-size:76px;margin-top:20px}
+  .sub{margin:22px 0 28px;font-size:19px}
+  .ctas .btn{height:54px}
+  .bowl{position:relative;left:auto;top:auto;width:108%;max-width:none;margin:30px 0 -20px -4%;transform:rotate(8deg)}
+  .seal{width:108px;height:108px;right:16px;bottom:auto;top:auto;margin-top:-140px;position:absolute}
+  .band{height:58px}.band div{font-size:18px}
+  .head{grid-template-columns:1fr;gap:24px}
+  .cards{grid-template-columns:1fr;gap:120px;margin-top:140px}
+  .card{min-height:0;padding:0 28px 32px}
+  .card img{width:72%}
+  .how__grid{grid-template-columns:1fr;gap:48px}
+  .how__lead{font-size:19px}
+  .steps{margin-top:34px}
+  .step{gap:18px;padding:20px 0;align-items:flex-start}
+  .step b{width:48px;height:48px;font-size:19px}
+  .step h3{font-size:24px}
+  .step p{font-size:17px}
+  .ctas .btn{flex:1 1 auto;justify-content:center}
+  .card img{height:250px}
+  .dk{display:none}
+  .card .n{padding-top:12px}
+  h2{font-size:44px}
+  .foot__bar{margin-top:60px}
+}
+</style>
+</head>
+<body>
+<header class="hero">
+  <nav class="nav">
+    <a href="#"><img class="nav__logo" src="assets/img/wordmark-navy.webp" alt="Bōru home" width="520" height="178"></a>
+    <div class="nav__links"><a href="#bowls">Our bowls</a><a href="#how">How it works</a><a class="btn btn--navy" href="#contact">Opening 2027</a></div>
+  </nav>
+  <div class="hero__text">
+    <div class="eyebrow">Asian rice bowls</div>
+    <h1>Fresh.<br>Healthy.<br><em>Filling.</em></h1>
+    <p class="sub">Colourful Asian rice bowls, made to order. Good for you, and big enough to keep you going.<br class="dk"> Opening 2027 in the UAE.</p>
+    <div class="ctas"><a class="btn btn--navy" href="#how">How it works <span class="arr">→</span></a><a class="btn btn--line" href="#bowls">Why a bowl?</a></div>
+  </div>
+  <img class="bowl" src="assets/img/bowl-hero.webp" alt="A colourful Bōru rice bowl with chopsticks" width="1200" height="1321" fetchpriority="high">
+  <div class="seal" aria-label="Opening 2027 in the UAE">
+    <svg viewBox="0 0 200 200" aria-hidden="true"><defs><path id="c" d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0"/></defs>
+      <circle cx="100" cy="100" r="99" fill="#09182F"/>
+      <text fill="#F2E1CF" font-family="Jost" font-weight="600" font-size="17" letter-spacing="1.9"><textPath href="#c">OPENING 2027 · UAE · OPENING 2027 · UAE · </textPath></text>
+      <circle cx="100" cy="100" r="17" fill="#D4553A"/></svg>
+  </div>
+</header>
+<div class="band" aria-hidden="true"><div>
+  <span>Fresh</span><span>Healthy</span><span>Filling</span><span>Made to order</span><span>Dine-in &amp; takeaway</span><span>Opening 2027</span>
+  <span>Fresh</span><span>Healthy</span><span>Filling</span><span>Made to order</span><span>Dine-in &amp; takeaway</span><span>Opening 2027</span>
+</div></div>
+
+<section class="pillars" id="bowls">
+  <div class="wrap">
+    <div class="head">
+      <div><div class="eyebrow">Why a bowl</div><h2>Everything a bowl<br class="dk"> should be.</h2></div>
+      <p>Fresh and healthy, yet properly filling. One bowl, one complete meal.</p>
+    </div>
+    <ul class="cards">
+      <li class="card"><img src="assets/img/bowl-chicken.webp" alt="Colourful Bōru rice bowl" loading="lazy" width="760" height="836"><div class="n">01</div><h3>Built<br>on rice.</h3><p>Every bowl starts here.</p></li>
+      <li class="card"><img src="assets/img/bowl-salmon.webp" alt="Colourful Bōru rice bowl" loading="lazy" width="760" height="863"><div class="n">02</div><h3>Made<br>to order.</h3><p>Fresh, colourful, fast.</p></li>
+      <li class="card"><img src="assets/img/bowl-meat.webp" alt="Colourful Bōru rice bowl" loading="lazy" width="760" height="615"><div class="n">03</div><h3>Light on you.<br>Big on food.</h3><p>Healthy, and properly filling.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="how" id="how">
+  <div class="wrap how__grid">
+    <div>
+      <div class="eyebrow">How it works</div>
+      <h2>Simple<br>by design.</h2>
+      <p class="how__lead">A short menu of bowls, plus sides and drinks. Eat in, or take it with you.</p>
+      <ol class="steps">
+        <li class="step"><b>1</b><div><h3>Pick a bowl</h3><p>Choose from a short, focused menu.</p></div></li>
+        <li class="step"><b>2</b><div><h3>Add sides and drinks</h3><p>Round off your meal.</p></div></li>
+        <li class="step"><b>3</b><div><h3>Eat in or take away</h3><p>Made to order, ready when you are.</p></div></li>
+      </ol>
+    </div>
+    <figure class="how__photo"><img src="assets/img/photo-how.webp" alt="A Bōru rice bowl with chopsticks on a wooden table" loading="lazy" width="900" height="1125"><figcaption>Dine-in &amp; takeaway</figcaption></figure>
+  </div>
+</section>
+
+<footer class="foot" id="contact">
+  <div class="wrap">
+    <div class="foot__top">
+      <h2>Opening 2027.<br><em>See you soon.</em></h2>
+    </div>
+    <div class="foot__bar"><img src="assets/img/wordmark-cream.webp" alt="Bōru" width="520" height="178" loading="lazy"><span>Opening 2027 · UAE</span><span>© 2026 Bōru</span></div>
+  </div>
+</footer>
+</body>
+</html>
