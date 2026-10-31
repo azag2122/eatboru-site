@@ -2,201 +2,542 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bōru · Fresh, healthy, filling rice bowls · Opening 2027 in the UAE</title>
-<meta name="description" content="Fresh Asian rice bowls, made to order. Healthy and filling. Dine-in and takeaway. Opening 2027 in the UAE.">
-<link rel="icon" type="image/png" href="assets/img/favicon.png">
-<!-- Bōru landing page.
-     -->
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bōru — Big bowls. Small menu. Opening in the UAE, 2027</title>
+<meta name="description" content="Bōru: Asian bowls, made to order. Dine in or take away. Opening in the UAE, 2027.">
+<meta name="theme-color" content="#09182F">
+<link rel="canonical" href="https://eatboru.ae/">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="preload" href="assets/fonts/brico.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/instr-i.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+@font-face{font-family:"Brico";src:url(assets/fonts/brico.woff2) format("woff2");font-weight:500 800;font-stretch:75% 100%;font-display:swap}
+@font-face{font-family:"Instr";src:url(assets/fonts/instr-i.woff2) format("woff2");font-style:italic;font-weight:400;font-display:swap}
 @font-face{font-family:"Jost";src:url(assets/fonts/Jost.woff2) format("woff2");font-weight:100 900;font-display:swap}
-@font-face{font-family:"Cormorant";src:url(assets/fonts/Cormorant.woff2) format("woff2");font-weight:300 700;font-display:swap}
-@font-face{font-family:"Cormorant";src:url(assets/fonts/Cormorant-Italic.woff2) format("woff2");font-weight:300 700;font-style:italic;font-display:swap}
-@font-face{font-family:"Kana";src:url(assets/fonts/NotoSerifJP-kana.woff2) format("woff2");font-display:swap}
-
-:root{--natt:#09182F;--ris:#F2E1CF;--ris2:#F7ECDF;--sage:#7E9275;--pers:#D4553A;
-  --pad:clamp(20px,5vw,80px);--r:28px;--sh:0 30px 50px -20px rgba(9,24,47,.45)}
-*{box-sizing:border-box}html,body{margin:0}
-body{background:var(--ris);color:var(--natt);font-family:Jost,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-img{display:block;max-width:100%;height:auto}a{color:inherit;text-decoration:none}
-.eyebrow{font-weight:600;font-size:15px;letter-spacing:.2em;text-transform:uppercase}
-.wrap{max-width:1440px;margin:0 auto;padding:0 var(--pad)}
-
-/* ---------- hero ---------- */
-.hero{position:relative;height:calc(100svh - 68px);min-height:700px;max-height:960px;overflow:hidden;
-  background:linear-gradient(90deg,var(--ris) 0 56%,var(--sage) 56% 100%)}
-.nav{position:absolute;z-index:5;inset:0 0 auto 0;display:flex;align-items:center;padding:30px var(--pad)}
-.nav__logo{height:40px;width:auto}
-.nav__links{margin-left:auto;display:flex;align-items:center;gap:40px;font-weight:500;font-size:17px}
-.nav__links a:not(.btn){position:relative}
-.nav__links a:not(.btn)::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:currentColor;transform:scaleX(0);transition:transform .25s}
-.nav__links a:not(.btn):hover::after{transform:scaleX(1)}
-.btn{display:inline-flex;align-items:center;gap:12px;height:56px;padding:0 30px;border-radius:999px;font-weight:600;font-size:17px;transition:transform .2s,background .2s,color .2s}
-.btn:hover{transform:translateY(-2px)}
-.btn--navy{background:var(--natt);color:var(--ris)}
-.btn--line{border:2px solid var(--natt)}
-.btn--line:hover{background:var(--natt);color:var(--ris)}
-.btn--ris{background:var(--ris);color:var(--natt)}
-.btn .arr{display:inline-block;transition:transform .2s}.btn:hover .arr{transform:translateX(4px)}
-
-.hero__text{position:absolute;z-index:3;left:var(--pad);top:50%;transform:translateY(-46%);width:min(40vw,580px)}
-.hero__text .eyebrow{display:flex;align-items:center;gap:12px;color:var(--pers)}
-.hero__text .eyebrow::before{content:"";width:34px;height:2px;background:currentColor}
-h1{margin:26px 0 0;font-weight:800;font-size:clamp(64px,8.9vw,132px);line-height:.88;letter-spacing:-.04em}
-h1 em{font-style:normal;color:var(--pers)}
-.sub{margin:32px 0 40px;font-size:21px;line-height:1.5;max-width:23em}
-.ctas{display:flex;gap:14px;flex-wrap:wrap}
-
-.bowl{position:absolute;z-index:2;width:min(46vw,680px);left:47.5%;top:56%;transform:translateY(-50%) rotate(8deg);
-  filter:drop-shadow(0 50px 50px rgba(9,24,47,.38)) drop-shadow(0 12px 16px rgba(9,24,47,.22))}
-.seal{position:absolute;z-index:4;right:calc(var(--pad) - 10px);bottom:40px;width:172px;height:172px;animation:spin 40s linear infinite}
-.seal svg{display:block;width:100%;height:100%}
-@keyframes spin{to{transform:rotate(360deg)}}
-
-.band{background:var(--pers);color:var(--ris);overflow:hidden;white-space:nowrap;height:68px;display:flex;align-items:center}
-.band div{display:inline-flex;gap:36px;font-weight:700;font-size:22px;letter-spacing:.08em;text-transform:uppercase;animation:mq 36s linear infinite}
-.band span{display:inline-flex;align-items:center;gap:36px}
-.band span::after{content:"";width:9px;height:9px;border-radius:50%;background:var(--natt)}
-@keyframes mq{to{transform:translateX(-50%)}}
-@media (prefers-reduced-motion:reduce){.band div,.seal{animation:none}}
-
-/* ---------- pillars ---------- */
-.pillars{background:var(--natt);color:var(--ris);padding:clamp(90px,9vw,140px) 0 clamp(90px,9vw,140px)}
-.head{display:grid;grid-template-columns:1.6fr 1fr;gap:60px;align-items:end}
-.head .eyebrow{color:var(--sage);margin-bottom:22px}
-h2{margin:0;font-weight:800;font-size:clamp(46px,6.2vw,92px);line-height:.92;letter-spacing:-.035em}
-.head p{margin:0;font-size:21px;line-height:1.55;color:rgba(242,225,207,.82);max-width:22em}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin:150px 0 0;padding:0;list-style:none}
-.card{position:relative;border-radius:var(--r);padding:0 36px 38px;display:flex;flex-direction:column;min-height:460px;box-shadow:var(--sh)}
-.card img{width:78%;height:300px;object-fit:contain;margin:-110px auto 0;filter:drop-shadow(0 26px 22px rgba(9,24,47,.4))}
-.card:nth-child(1){background:var(--pers);color:var(--ris)}
-.card:nth-child(2){background:var(--sage);color:var(--natt)}
-.card:nth-child(3){background:var(--ris);color:var(--natt)}
-.card:nth-child(1) img{transform:rotate(-7deg)}.card:nth-child(2) img{transform:rotate(5deg)}.card:nth-child(3) img{transform:rotate(-3deg)}
-.card .n{font-weight:600;font-size:15px;letter-spacing:.2em;opacity:.7;margin-top:auto;padding-top:30px}
-.card h3{margin:10px 0 0;font-weight:800;font-size:clamp(40px,3.9vw,58px);line-height:.95;letter-spacing:-.03em}
-.card p{margin:12px 0 0;font-size:19px;line-height:1.45;font-weight:500;max-width:17em}
-
-/* ---------- how it works ---------- */
-.how{background:var(--ris);padding:clamp(90px,9vw,140px) 0}
-.how__grid{display:grid;grid-template-columns:1fr minmax(0,560px);gap:clamp(40px,7vw,110px);align-items:center}
-.how .eyebrow{color:var(--pers);margin-bottom:22px}
-.how__lead{margin:26px 0 0;font-size:21px;line-height:1.55;color:rgba(9,24,47,.78);max-width:24em}
-.steps{margin:48px 0 0;padding:0;list-style:none;border-top:2px solid rgba(9,24,47,.12)}
-.step{display:flex;gap:26px;align-items:center;padding:26px 0;border-bottom:2px solid rgba(9,24,47,.12)}
-.step b{flex:none;display:grid;place-items:center;width:60px;height:60px;border-radius:50%;background:var(--natt);color:var(--ris);font-size:22px;font-weight:700}
-.step:nth-child(2) b{background:var(--sage);color:var(--natt)}.step:nth-child(3) b{background:var(--pers)}
-.step h3{margin:0;font-weight:700;font-size:30px;line-height:1.1;letter-spacing:-.02em}
-.step p{margin:4px 0 0;font-size:19px;line-height:1.45;color:rgba(9,24,47,.75)}
-.how__photo{position:relative;margin:0}
-.how__photo img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r);box-shadow:var(--sh)}
-.how__photo figcaption{position:absolute;left:24px;bottom:24px;background:var(--ris);color:var(--natt);font-weight:600;font-size:17px;padding:12px 22px;border-radius:999px}
-
-/* ---------- footer ---------- */
-.foot{background:var(--natt);color:var(--ris);padding:clamp(80px,8vw,120px) 0 40px}
-.foot__top{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap}
-.foot h2 em{font-style:normal;color:var(--pers)}
-.foot__contact{display:flex;flex-direction:column;gap:14px;font-size:21px}
-.foot__contact a{border-bottom:2px solid rgba(242,225,207,.25);padding-bottom:4px;align-self:flex-start}
-.foot__contact a:hover{border-color:var(--pers)}
-.foot__bar{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:90px;padding-top:30px;border-top:1px solid rgba(242,225,207,.16);font-size:16px;color:rgba(242,225,207,.7)}
-.foot__bar img{height:34px;width:auto}
-
-/* ---------- mobile ---------- */
+@font-face{font-family:"Kana";src:url(assets/fonts/kana.woff2) format("woff2");font-display:block}
+:root{--navy:#09182F;--navy2:#1E3556;--cream:#F2E1CF;--sage:#7E9275;--pers:#D4553A;--pad:clamp(20px,2.8vw,44px)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:Jost,system-ui,sans-serif;font-size:17px;line-height:1.5;color:var(--navy);background:var(--cream);-webkit-font-smoothing:antialiased;overflow-x:clip}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+.d{font-family:Brico,Impact,sans-serif;font-weight:800;font-stretch:75%;letter-spacing:-.025em;line-height:.84;text-transform:none}
+.s{font-family:Instr,Georgia,serif;font-style:italic;font-weight:400;letter-spacing:-.01em}
+.k{font-family:Kana,sans-serif;font-weight:400}
+.cap{font-family:Jost;font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* paper grain */
+.grain{position:relative;isolation:isolate}
+.grain::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.5;mix-blend-mode:multiply;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .25 0 0 0 0 .15 0 0 0 .16 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.dark.grain::before{mix-blend-mode:screen;opacity:.35}
+/* ---------- HERO ---------- */
+.hero{min-height:max(100svh,780px);padding:var(--pad);display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:auto 1fr auto;column-gap:20px;overflow:hidden}
+.bar{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative;z-index:5}
+.bar img{width:118px}
+.bar nav{display:flex;gap:28px}
+.bar nav a{text-decoration:none;font-size:14px;font-weight:500;letter-spacing:.02em;border-bottom:1.5px solid transparent;padding:4px 0}
+.bar nav a:hover,.bar nav a:focus-visible{border-color:currentColor}
+.bar .tag{display:flex;align-items:center;gap:10px}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--pers);display:inline-block}
+.hero h1{grid-column:1/-1;align-self:center;position:relative;z-index:3;font-size:clamp(80px,9.6vw,180px);color:var(--navy);margin:3vh 0 0;pointer-events:none}
+.hero h1 span{display:block}
+.hero h1 .l2{margin-left:12vw}
+.hero h1 .l3{font-family:Instr,Georgia,serif;font-style:italic;font-weight:400;font-stretch:100%;letter-spacing:-.035em;color:var(--pers);font-size:1.13em;line-height:.8;margin-left:2.2vw}
+.hero .bowl{position:absolute;z-index:4;width:min(41vw,680px);right:8.5vw;top:50%;translate:0 -46%;filter:drop-shadow(0 40px 40px rgba(9,24,47,.28)) drop-shadow(0 8px 10px rgba(9,24,47,.18))}
+.hero .bowl img{will-change:transform}
+.hero .kv{position:absolute;z-index:1;right:calc(var(--pad) - .06em);top:118px;writing-mode:vertical-rl;font-size:clamp(90px,12.4vw,200px);line-height:1;color:var(--sage);letter-spacing:-.04em}
+.hero .foot{grid-column:1/-1;display:grid;grid-template-columns:repeat(12,1fr);column-gap:20px;align-items:end;position:relative;z-index:5}
+.hero .foot p{grid-column:4/span 3;font-size:17px;line-height:1.45;max-width:300px;justify-self:start}
+.hero .foot .meta{grid-column:1/span 3}
+.cue{display:inline-flex;align-items:center;gap:14px;text-decoration:none}
+.cue i{display:block;width:46px;height:46px;border:1.5px solid currentColor;border-radius:50%;position:relative}
+.cue i::after{content:"";position:absolute;left:50%;top:13px;width:1.5px;height:18px;background:currentColor;translate:-50% 0}
+.cue i::before{content:"";position:absolute;left:50%;top:22px;width:9px;height:9px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;translate:-50% 0;rotate:45deg}
+/* ---------- BUILD ---------- */
+.build{background:var(--navy);color:var(--cream);position:relative}
+.build-head{padding:clamp(72px,10vw,150px) var(--pad) 0;display:grid;grid-template-columns:repeat(12,1fr);column-gap:20px;align-items:end}
+.num{font-family:Jost;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;display:flex;gap:14px;align-items:center}
+.num b{font-weight:600;color:var(--pers)}
+.num::after{content:"";height:1px;width:56px;background:currentColor;opacity:.5}
+.build-head .num{grid-column:1/span 4;align-self:start}
+.build-head h2{grid-column:5/-1;font-size:clamp(56px,7.4vw,124px);line-height:.9}
+.build-head h2 .s{color:var(--sage);font-size:1.08em}
+.scrolly{display:grid;grid-template-columns:repeat(12,1fr);column-gap:20px;padding:0 var(--pad)}
+.steps{grid-column:1/span 5;position:relative;z-index:2}
+.step{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:12vh 0}
+.step .cap{font-family:Jost,sans-serif;font-style:normal;font-size:12px;line-height:1.2;max-width:none;margin-top:0;color:var(--sage);margin-bottom:28px;display:flex;gap:16px;align-items:center}
+.step .cap em{font-style:normal;color:var(--cream);opacity:.55}
+.step h3{font-size:clamp(84px,10.4vw,176px);margin-left:-.04em;transition:opacity .6s,translate .8s cubic-bezier(.2,.7,.2,1)}
+.step h3.long{font-size:clamp(70px,8.2vw,140px)}
+.step p{font-family:Instr,Georgia,serif;font-style:italic;font-size:clamp(28px,2.7vw,44px);line-height:1.08;margin-top:28px;max-width:16ch;color:var(--cream)}
+.step p.fav{font-family:Brico;font-style:normal;font-weight:700;font-stretch:85%;letter-spacing:-.01em;line-height:1.02;max-width:none}
+.step[data-i="1"] h3{color:var(--cream)}
+.step[data-i="2"] h3{color:var(--pers)}
+.step[data-i="3"] h3{color:var(--sage)}
+.step[data-i="4"] h3{color:var(--cream)}
+.js .step h3,.js .step p,.js .step .cap{opacity:.18;transition:opacity .6s}
+.js .step.on h3,.js .step.on p,.js .step.on .cap{opacity:1}
+.stage{grid-column:6/-1;position:sticky;top:0;height:100svh;display:grid;place-items:center;z-index:1}
+.disc{position:absolute;width:min(46vw,88svh);aspect-ratio:1;border-radius:50%;background:var(--navy2);transition:background-color .9s cubic-bezier(.2,.7,.2,1),scale .9s cubic-bezier(.2,.7,.2,1);left:50%;top:50%;translate:-46% -50%}
+.stage[data-step="2"] .disc{background:var(--pers)}
+.stage[data-step="3"] .disc{background:var(--sage)}
+.stage[data-step="4"] .disc{background:var(--cream);scale:1.04}
+.big-n{position:absolute;right:-1vw;bottom:2vh;font-size:clamp(160px,24vw,400px);color:transparent;-webkit-text-stroke:1.5px rgba(242,225,207,.32);line-height:.8;letter-spacing:-.04em}
+.big-n span{position:absolute;right:0;bottom:0;opacity:0;translate:0 30px;transition:opacity .6s,translate .8s cubic-bezier(.2,.7,.2,1)}
+.big-n span:first-child{position:relative}
+.stage[data-step="1"] .big-n span:nth-child(1),.stage[data-step="2"] .big-n span:nth-child(2),.stage[data-step="3"] .big-n span:nth-child(3),.stage[data-step="4"] .big-n span:nth-child(4){opacity:1;translate:0 0}
+.plate{position:relative;width:min(37vw,62svh);aspect-ratio:1200/1321;translate:-2% 0}
+.plate .sh{position:absolute;left:4%;right:4%;top:12%;bottom:4%;border-radius:50%;background:radial-gradient(closest-side,rgba(2,8,18,.55),rgba(2,8,18,.3) 66%,rgba(2,8,18,0));will-change:transform,opacity}
+.bw{position:absolute;inset:0;will-change:transform}
+.bw>*{position:absolute}
+.bw .L,.bw .fin{inset:0;width:100%;height:100%}
+.pc{background-repeat:no-repeat;will-change:transform,opacity;transform-origin:50% 85%}
+.a1{background-image:url(assets/img/bb2-p1.webp)}.a2{background-image:url(assets/img/bb2-p2.webp)}.a3{background-image:url(assets/img/bb2-p3.webp)}.a4{background-image:url(assets/img/bb2-p4.webp)}
+.ps{border-radius:50%;background:radial-gradient(closest-side,rgba(6,4,2,.5),rgba(6,4,2,.22) 60%,rgba(6,4,2,0));opacity:0;pointer-events:none}
+.dz,.spr{will-change:auto}
+.chop{pointer-events:none;z-index:5}
+.tx{display:none}
 @media (max-width:820px){
-  .hero{height:auto;min-height:0;max-height:none;background:linear-gradient(180deg,var(--ris) 0 calc(100% - 250px),var(--sage) calc(100% - 250px));padding:112px 0 0}
-  .nav{padding:22px var(--pad)}.nav__logo{height:32px}
-  .nav__links a:not(.btn){display:none}
-  .nav .btn{height:46px;padding:0 20px;font-size:16px}
-  .hero__text{position:relative;left:auto;top:auto;transform:none;width:auto;padding:0 var(--pad)}
-  h1{font-size:76px;margin-top:20px}
-  .sub{margin:22px 0 28px;font-size:19px}
-  .ctas .btn{height:54px}
-  .bowl{position:relative;left:auto;top:auto;width:108%;max-width:none;margin:30px 0 -20px -4%;transform:rotate(8deg)}
-  .seal{width:108px;height:108px;right:16px;bottom:auto;top:auto;margin-top:-140px;position:absolute}
-  .band{height:58px}.band div{font-size:18px}
-  .head{grid-template-columns:1fr;gap:24px}
-  .cards{grid-template-columns:1fr;gap:120px;margin-top:140px}
-  .card{min-height:0;padding:0 28px 32px}
-  .card img{width:72%}
-  .how__grid{grid-template-columns:1fr;gap:48px}
-  .how__lead{font-size:19px}
-  .steps{margin-top:34px}
-  .step{gap:18px;padding:20px 0;align-items:flex-start}
-  .step b{width:48px;height:48px;font-size:19px}
-  .step h3{font-size:24px}
-  .step p{font-size:17px}
-  .ctas .btn{flex:1 1 auto;justify-content:center}
-  .card img{height:250px}
-  .dk{display:none}
-  .card .n{padding-top:12px}
-  h2{font-size:44px}
-  .foot__bar{margin-top:60px}
+ .js .stage{height:100svh;display:block}
+ .js .stage .plate{position:absolute;left:50%;top:31svh;translate:-50% -50%}
+ .js .stage .disc{top:31svh}
+ .js .stage .big-n{bottom:auto;top:calc(61svh - .8em)}
+ .js .steps .step{min-height:75svh}
+ .js .steps .step:last-child{min-height:100svh}
+ .js .steps .step>*{opacity:0!important}
+ .js .tx{display:block;position:absolute;left:var(--pad);right:var(--pad);top:62svh;bottom:0}
+ .js .tx .step{position:absolute;left:0;right:0;top:0;min-height:0;padding:0;display:block;opacity:0;translate:0 14px;transition:opacity .45s,translate .6s cubic-bezier(.2,.7,.2,1)}
+ .js .tx .step h3,.js .tx .step p,.js .tx .step .cap{opacity:1}
+ .js .tx .step h3,.js .tx .step h3.long{font-size:min(15vw,9svh)}
+ .js .tx .step p{font-size:min(28px,4.2svh);margin-top:min(14px,2svh)}
+ .js .tx .step .cap{margin-bottom:min(14px,2svh)}
+ .stage[data-step="1"] .tx .t1,.stage[data-step="2"] .tx .t2,.stage[data-step="3"] .tx .t3,.stage[data-step="4"] .tx .t4{opacity:1;translate:0 0}
+}
+/*stage-end*/
+.legend{position:absolute;left:0;bottom:6vh;list-style:none;display:flex;gap:22px;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
+.legend li{opacity:.4;transition:opacity .4s;display:flex;align-items:center;gap:8px}
+.legend li::before{content:"";width:22px;height:2px;background:currentColor;transition:width .5s}
+.stage[data-step="1"] .legend li:nth-child(-n+1),.stage[data-step="2"] .legend li:nth-child(-n+2),.stage[data-step="3"] .legend li:nth-child(-n+3),.stage[data-step="4"] .legend li{opacity:1}
+.stage[data-step="1"] .legend li:nth-child(1)::before,.stage[data-step="2"] .legend li:nth-child(2)::before,.stage[data-step="3"] .legend li:nth-child(3)::before,.stage[data-step="4"] .legend li:nth-child(4)::before{width:40px;background:var(--pers)}
+/* ---------- BAND ---------- */
+.band{background:var(--pers);color:var(--cream);overflow:hidden;padding:22px 0;border-block:0}
+.band .track{display:flex;width:max-content;gap:0;animation:roll 38s linear infinite}
+.band span{font-size:clamp(44px,5vw,80px);white-space:nowrap;padding-right:.5em;line-height:1}
+.band .k{font-size:.86em;color:var(--navy);margin-left:.7em;padding-right:0}
+.band>.track>span{padding-right:1em}
+@keyframes roll{to{translate:-50% 0}}
+/* ---------- MENU ---------- */
+.menu{padding:clamp(80px,10vw,160px) var(--pad) clamp(80px,9vw,140px);display:grid;grid-template-columns:repeat(12,1fr);column-gap:20px;overflow:hidden}
+.menu .num{grid-column:1/-1;margin-bottom:clamp(40px,5vw,80px)}
+.menu .num b{color:var(--pers)}
+.menu h2{grid-column:1/span 7;font-size:clamp(72px,10.6vw,184px);position:relative;z-index:2}
+.menu h2 .s{display:block;white-space:nowrap;font-size:.5em;color:var(--sage);line-height:1;margin:.12em 0 0 .9em;letter-spacing:-.02em}
+.menu .copy{grid-column:2/span 4;margin-top:clamp(40px,5vw,80px);font-size:19px;max-width:30ch}
+.sides{grid-column:1/span 7;margin-top:clamp(56px,6vw,96px);display:flex;flex-wrap:wrap;align-items:baseline;gap:24px;border-top:1.5px solid var(--navy);padding-top:22px}
+.sides .s{font-size:clamp(40px,4.4vw,72px);line-height:1}
+.sides .sides-list{flex-basis:100%;margin:-6px 0 0 calc(clamp(40px,4.4vw,72px)*.62 + 24px);font-size:clamp(18px,1.5vw,24px);line-height:1.35;opacity:.85}
+.sides .plus{font-family:Brico;font-weight:800;font-size:clamp(40px,4.4vw,72px);color:var(--pers);line-height:.8}
+.cluster{grid-column:8/-1;grid-row:2/span 4;position:relative;min-height:700px}
+.cluster figure{position:absolute;margin:0}
+.cluster figcaption{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;margin-top:10px;display:flex;gap:10px}
+.cluster figcaption b{color:var(--pers);font-weight:600}
+.cluster figcaption{flex-wrap:wrap}
+.cluster figcaption>span:not(.fd){flex:1 1 0;min-width:0}
+.cluster figcaption .fd{flex-basis:100%;font-family:Instr,Georgia,serif;font-style:italic;font-weight:400;text-transform:none;letter-spacing:0;font-size:clamp(17px,1.4vw,22px);line-height:1.2;margin-top:2px}
+.f1{width:80%;right:-10%;top:-2%;display:flex;flex-direction:column-reverse}
+.f1 figcaption{margin:0 0 10px 14%}
+.f2{width:46%;left:-8%;top:56%}
+.f3{width:36%;right:0;top:82%}
+.cluster img{filter:drop-shadow(0 24px 24px rgba(9,24,47,.22))}
+/* ---------- DINE ---------- */
+.dine{background:var(--sage);color:var(--navy);padding:clamp(80px,10vw,150px) var(--pad);display:grid;grid-template-columns:repeat(12,1fr);column-gap:20px;overflow:hidden;position:relative}
+.dine .num{grid-column:1/-1;margin-bottom:clamp(40px,5vw,70px)}
+.dine .num b{color:var(--cream)}
+.dine .bowl2{position:absolute;right:-2vw;top:clamp(40px,4vw,70px);width:min(26vw,440px);rotate:-14deg;filter:drop-shadow(0 30px 30px rgba(9,24,47,.3));z-index:0}
+.dine>p{position:relative;z-index:1}
+.dine .w1{grid-column:1/span 8;font-size:clamp(80px,13vw,230px)}
+.dine .sl{grid-column:4/span 2;font-size:clamp(120px,17vw,300px);color:var(--pers);line-height:.7;text-align:center;margin:-.06em 0}
+.dine .w2{grid-column:4/-1;font-size:clamp(80px,13vw,230px);text-align:right}
+.dine .w2 .s{font-size:1.1em;color:var(--cream);letter-spacing:-.03em}
+.dine .body{grid-column:1/span 4;margin-top:clamp(40px,5vw,72px);font-size:19px;max-width:28ch}
+/* ---------- FINALE ---------- */
+.finale{background:var(--navy);color:var(--cream);padding:clamp(70px,8vw,120px) var(--pad) 28px;position:relative;overflow:hidden}
+.finale .num b{color:var(--pers)}
+.yr{font-size:clamp(200px,44vw,760px);line-height:.76;letter-spacing:-.05em;color:var(--pers);margin:clamp(30px,4vw,60px) 0 0 -.04em;display:flex;align-items:flex-end}
+.yr .k{font-size:.17em;color:var(--cream);writing-mode:vertical-rl;letter-spacing:0;margin:0 0 .35em .25em;line-height:1}
+.fin-row{display:grid;grid-template-columns:repeat(12,1fr);column-gap:20px;margin-top:clamp(36px,4vw,64px);align-items:end}
+.fin-row h2{grid-column:1/span 7;font-size:clamp(48px,6vw,104px)}
+.fin-row h2 .s{color:var(--sage)}
+.fin-row p{grid-column:9/-1;font-size:19px;max-width:30ch}
+.legal{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:clamp(64px,7vw,120px);padding-top:22px;border-top:1px solid rgba(242,225,207,.22);font-size:13px;opacity:.85}
+.legal img{width:96px}
+.legal a{text-decoration:none;border-bottom:1px solid rgba(242,225,207,.35);padding:2px 0}
+.legal a:hover,.legal a:focus-visible{border-color:currentColor}
+:focus-visible{outline:2.5px solid var(--pers);outline-offset:4px}
+.skip{position:absolute;left:12px;top:-60px;background:var(--navy);color:var(--cream);padding:10px 14px;z-index:50}
+.skip:focus{top:12px}
+/* ---------- MOBILE ---------- */
+@media (max-width:820px){
+ body{font-size:16px}
+ .hero{grid-template-columns:1fr;min-height:auto;padding-bottom:28px}
+ .bar img{width:92px}
+ .bar nav{display:none}
+ .bar .tag{font-size:11px}
+ .hero h1{font-size:25.5vw;margin:14vw 0 0}
+ .hero h1 .l2{margin-left:9vw}
+ .hero h1 .l3{margin-left:0;font-size:1.16em}
+ .hero .bowl{position:relative;width:92vw;right:auto;top:auto;translate:0 0;margin:2vw 0 0 auto;justify-self:end;grid-column:1/-1;margin-right:-14vw}
+ .hero .kv{display:none}
+ .hero .foot p{grid-column:1}
+ .hero .foot{grid-template-columns:1fr;row-gap:22px;margin-top:8px}
+ .hero .foot p{grid-column:1;max-width:none;font-size:18px}
+ .hero .foot .meta{grid-column:1;order:3}
+ .build-head{grid-template-columns:1fr;row-gap:28px;padding-top:80px}
+ .build-head .num,.build-head h2{grid-column:1}
+ .build-head h2{font-size:15vw}
+ .scrolly{display:block;padding:0}
+ .stage{height:60svh;top:0;background:var(--navy);z-index:3;padding:0}
+ .disc{width:min(80vw,46svh);translate:-50% -50%}
+ .plate{width:min(96vw,52svh);translate:0 0}
+ .big-n{font-size:34vw;right:2vw;bottom:1svh}
+ .legend{display:none}
+ .steps{padding:0 var(--pad)}
+ .step{min-height:62svh;justify-content:flex-start;padding:5svh 0 8svh}
+ .step .cap{margin-bottom:16px}
+ .step h3,.step h3.long{font-size:17vw}
+ .step p{font-size:30px;margin-top:16px}
+ .menu,.dine{grid-template-columns:1fr}
+ .menu>*,.dine>*{grid-column:1!important}
+ .menu h2{font-size:21vw}
+ .menu .copy{margin-top:28px}
+ .menu h2 .s{white-space:normal;font-size:.56em;margin-left:0}
+ .cluster{grid-row:auto;min-height:0;height:136vw;margin-top:36px}
+ .dine .num{padding-right:30vw}
+ .dine .num b{flex:none}
+ .f1{width:86%;right:-12%;top:0}
+ .f1 figcaption{margin-left:0}
+ .f2{width:52%;left:-4%;top:58%}
+ .f3{width:40%;right:0;top:78%}
+ .sides{grid-row:auto;flex-wrap:wrap;gap:14px;margin-top:104px}
+ .dine .w1,.dine .w2{font-size:21vw}
+ .dine .bowl2{width:40vw;right:-12vw;top:24px}
+ .dine .sl{font-size:30vw;text-align:left;margin:.02em 0}
+ .dine .w2{text-align:left}
+ .yr{font-size:54vw}
+ .fin-row{grid-template-columns:1fr;row-gap:24px}
+ .fin-row h2,.fin-row p{grid-column:1}
+ .fin-row h2{font-size:13vw}
+ .legal{flex-direction:column;align-items:flex-start}
+}
+@media (prefers-reduced-motion:reduce){
+ *,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}
 }
 </style>
 </head>
 <body>
-<header class="hero">
-  <nav class="nav">
-    <a href="#"><img class="nav__logo" src="assets/img/wordmark-navy.webp" alt="Bōru home" width="520" height="178"></a>
-    <div class="nav__links"><a href="#bowls">Our bowls</a><a href="#how">How it works</a><a class="btn btn--navy" href="#contact">Opening 2027</a></div>
-  </nav>
-  <div class="hero__text">
-    <div class="eyebrow">Asian rice bowls</div>
-    <h1>Fresh.<br>Healthy.<br><em>Filling.</em></h1>
-    <p class="sub">Colourful Asian rice bowls, made to order. Good for you, and big enough to keep you going.<br class="dk"> Opening 2027 in the UAE.</p>
-    <div class="ctas"><a class="btn btn--navy" href="#how">How it works <span class="arr">→</span></a><a class="btn btn--line" href="#bowls">Why a bowl?</a></div>
+<a class="skip" href="#build">Skip to content</a>
+
+<header class="hero grain" id="top">
+  <div class="bar">
+    <a href="#top" aria-label="Boru — home"><img src="assets/img/wordmark-navy.webp" width="240" height="82" alt="Boru"></a>
+    <nav aria-label="Sections"><a href="#build">The bowl</a><a href="#menu">The menu</a><a href="#visit">2027</a></nav>
+    <span class="tag cap"><span class="dot" aria-hidden="true"></span>Opening 2027 · UAE</span>
   </div>
-  <img class="bowl" src="assets/img/bowl-hero.webp" alt="A colourful Bōru rice bowl with chopsticks" width="1200" height="1321" fetchpriority="high">
-  <div class="seal" aria-label="Opening 2027 in the UAE">
-    <svg viewBox="0 0 200 200" aria-hidden="true"><defs><path id="c" d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0"/></defs>
-      <circle cx="100" cy="100" r="99" fill="#09182F"/>
-      <text fill="#F2E1CF" font-family="Jost" font-weight="600" font-size="17" letter-spacing="1.9"><textPath href="#c">OPENING 2027 · UAE · OPENING 2027 · UAE · </textPath></text>
-      <circle cx="100" cy="100" r="17" fill="#D4553A"/></svg>
+  <h1 class="d"><span class="l1">Big bowls.</span><span class="l2">Small menu.</span><span class="l3">No waiting<br> around.</span></h1>
+  <div class="kv k" aria-hidden="true">ボウル</div>
+  <div class="bowl"><img id="spin" src="assets/img/bowl-hero.webp" width="1200" height="1321" alt="An Asian bowl seen from above, colourful toppings over rice" fetchpriority="high"></div>
+  <div class="foot">
+    <a class="meta cue cap" href="#build"><i aria-hidden="true"></i>Scroll down. Get hungry.</a>
+    <p>Asian bowls, made to order. Opening in the UAE, 2027.</p>
   </div>
 </header>
-<div class="band" aria-hidden="true"><div>
-  <span>Fresh</span><span>Healthy</span><span>Filling</span><span>Made to order</span><span>Dine-in &amp; takeaway</span><span>Opening 2027</span>
-  <span>Fresh</span><span>Healthy</span><span>Filling</span><span>Made to order</span><span>Dine-in &amp; takeaway</span><span>Opening 2027</span>
+
+<main>
+<section class="build dark grain" id="build" aria-labelledby="build-h">
+  <div class="build-head">
+    <p class="num"><b>№ 01</b> Build a bowl</p>
+    <h2 class="d" id="build-h">Four steps. <span class="s">Quick and fresh.</span></h2>
+  </div>
+  <div class="scrolly">
+    <div class="stage" data-step="1" aria-hidden="true">
+      <div class="disc"></div>
+      <div class="big-n d"><span>01</span><span>02</span><span>03</span><span>04</span></div>
+      <div class="plate">
+        <div class="sh"></div>
+        <div class="bw">
+          <img class="L" src="assets/img/bb2-s0.webp" width="1200" height="1321" alt="" decoding="async">
+          <div class="ps" data-s="1" style="left:33.542%;top:49.801%;width:31.800%;height:22.358%"></div>
+          <div class="pc a1 rice" data-s="1" style="left:28.750%;top:38.380%;width:39.750%;height:40.651%;background-size:222.013% 263.687%;background-position:0.000% 0.000%"></div>
+          <div class="ps" data-s="1" style="left:21.651%;top:40.336%;width:22.800%;height:14.031%"></div>
+          <div class="pc a1 rice" data-s="1" style="left:16.750%;top:33.384%;width:28.500%;height:25.511%;background-size:309.649% 420.178%;background-position:0.000% 49.954%"></div>
+          <div class="ps" data-s="1" style="left:41.706%;top:75.996%;width:22.467%;height:10.742%"></div>
+          <div class="pc a1 rice" data-s="1" style="left:38.750%;top:69.947%;width:28.083%;height:19.531%;background-size:314.243% 548.837%;background-position:70.914% 75.820%"></div>
+          <div class="ps" data-s="1" style="left:63.415%;top:55.509%;width:17.933%;height:13.864%"></div>
+          <div class="pc a1 rice" data-s="1" style="left:60.750%;top:47.691%;width:22.417%;height:25.208%;background-size:393.680% 425.225%;background-position:43.544% 49.769%"></div>
+          <div class="ps" data-s="1" style="left:19.576%;top:62.352%;width:16.400%;height:12.865%"></div>
+          <div class="pc a1 rice" data-s="1" style="left:16.583%;top:55.942%;width:20.500%;height:23.391%;background-size:430.488% 458.252%;background-position:75.646% 48.690%"></div>
+          <div class="ps" data-s="1" style="left:47.173%;top:32.256%;width:19.933%;height:14.281%"></div>
+          <div class="pc a1 rice" data-s="1" style="left:44.417%;top:22.786%;width:24.917%;height:25.965%;background-size:354.181% 412.828%;background-position:63.026% 0.000%"></div>
+          <div class="ps" data-s="1" style="left:58.839%;top:42.873%;width:17.200%;height:11.866%"></div>
+          <div class="pc a1 rice" data-s="1" style="left:55.833%;top:36.185%;width:21.500%;height:21.575%;background-size:410.465% 496.842%;background-position:0.000% 77.630%"></div>
+          <div class="ps" data-s="1" style="left:29.115%;top:74.289%;width:18.533%;height:10.450%"></div>
+          <div class="pc a1 rice" data-s="1" style="left:25.333%;top:69.493%;width:23.167%;height:19.001%;background-size:380.935% 564.143%;background-position:0.000% 100.000%"></div>
+          <div class="ps" data-s="1" style="left:58.203%;top:70.554%;width:16.667%;height:10.783%"></div>
+          <div class="pc a1 rice" data-s="1" style="left:55.917%;top:65.859%;width:20.833%;height:19.606%;background-size:423.600% 546.718%;background-position:32.138% 75.886%"></div>
+          <div class="ps" data-s="1" style="left:17.437%;top:49.960%;width:12.933%;height:12.615%"></div>
+          <div class="pc a1 rice" data-s="1" style="left:15.667%;top:44.360%;width:16.167%;height:22.937%;background-size:545.876% 467.327%;background-position:99.769% 48.428%"></div>
+          <div class="ps" data-s="1" style="left:34.186%;top:32.650%;width:19.600%;height:9.326%"></div>
+          <div class="pc a1 rice" data-s="1" style="left:31.000%;top:28.009%;width:24.500%;height:16.957%;background-size:360.204% 632.143%;background-position:36.601% 97.735%"></div>
+          <img class="rl" data-s="1" src="assets/img/bb2-r1.webp" style="left:7.333%;top:0.000%;width:92.667%;height:93.414%" alt="" decoding="async">
+          <div class="ps" data-s="2" style="left:45.270%;top:29.583%;width:16.067%;height:10.992%"></div>
+          <div class="pc a2 chicken" data-s="2" style="left:42.000%;top:25.057%;width:20.083%;height:19.985%;background-size:302.075% 423.106%;background-position:0.000% 100.000%"></div>
+          <div class="ps" data-s="2" style="left:26.515%;top:40.899%;width:26.400%;height:15.072%"></div>
+          <div class="pc a2 chicken" data-s="2" style="left:22.167%;top:33.232%;width:33.000%;height:27.403%;background-size:183.838% 308.564%;background-position:99.398% 0.000%"></div>
+          <div class="ps" data-s="2" style="left:29.762%;top:61.234%;width:21.133%;height:11.575%"></div>
+          <div class="pc a2 chicken" data-s="2" style="left:26.750%;top:55.110%;width:26.417%;height:21.045%;background-size:229.653% 401.799%;background-position:0.000% 68.296%"></div>
+          <div class="ps" data-s="2" style="left:48.729%;top:44.199%;width:21.867%;height:23.774%"></div>
+          <div class="pc a2 chicken" data-s="2" style="left:46.417%;top:32.324%;width:27.333%;height:43.225%;background-size:221.951% 195.622%;background-position:0.000% 0.000%"></div>
+          <div class="ps" data-s="2" style="left:60.399%;top:59.453%;width:18.667%;height:11.117%"></div>
+          <div class="pc a2 chicken" data-s="2" style="left:56.667%;top:53.142%;width:23.333%;height:20.212%;background-size:260.000% 418.352%;background-position:71.205% 67.412%"></div>
+          <img class="rl" data-s="2" src="assets/img/bb2-r2.webp" style="left:22.000%;top:24.224%;width:58.250%;height:52.082%" alt="" decoding="async">
+          <div class="ps" data-s="3" style="left:38.629%;top:7.411%;width:31.333%;height:21.609%"></div>
+          <div class="pc a3 bed" data-s="3" style="left:34.583%;top:0.000%;width:39.167%;height:39.288%;background-size:278.936% 271.869%;background-position:84.067% 0.000%"></div>
+          <div class="ps" data-s="3" style="left:2.692%;top:53.472%;width:34.933%;height:17.279%"></div>
+          <div class="pc a3 bed" data-s="3" style="left:8.000%;top:50.871%;width:43.667%;height:31.416%;background-size:250.191% 340.000%;background-position:0.000% 58.835%"></div>
+          <div class="ps" data-s="3" style="left:79.482%;top:47.218%;width:22.533%;height:24.315%"></div>
+          <div class="pc a3 bed" data-s="3" style="left:71.833%;top:37.245%;width:28.167%;height:44.209%;background-size:387.870% 241.610%;background-position:0.000% 0.000%"></div>
+          <div class="ps" data-s="3" style="left:8.986%;top:40.296%;width:16.267%;height:16.363%"></div>
+          <div class="pc a3 bed" data-s="3" style="left:8.000%;top:26.722%;width:20.333%;height:29.750%;background-size:537.295% 359.033%;background-position:49.297% 57.564%"></div>
+          <div class="ps" data-s="3" style="left:74.294%;top:39.153%;width:17.933%;height:11.908%"></div>
+          <div class="pc a3 green" data-s="3" style="left:70.583%;top:32.551%;width:22.417%;height:21.650%;background-size:487.361% 493.357%;background-position:0.000% 89.156%"></div>
+          <div class="ps" data-s="3" style="left:20.704%;top:34.783%;width:11.733%;height:12.407%"></div>
+          <div class="pc a3 green" data-s="3" style="left:17.417%;top:26.874%;width:14.667%;height:22.559%;background-size:744.886% 473.490%;background-position:68.018% 52.650%"></div>
+          <div class="ps" data-s="3" style="left:62.278%;top:39.280%;width:24.333%;height:24.065%"></div>
+          <div class="pc a3 green" data-s="3" style="left:58.583%;top:27.403%;width:30.417%;height:43.755%;background-size:359.178% 244.118%;background-position:35.941% 0.000%"></div>
+          <div class="ps" data-s="3" style="left:61.242%;top:83.796%;width:4.267%;height:3.456%"></div>
+          <div class="pc a3 green" data-s="3" style="left:59.917%;top:81.075%;width:5.333%;height:6.283%;background-size:2048.438% 1700.000%;background-position:23.095% 97.214%"></div>
+          <div class="ps" data-s="3" style="left:76.143%;top:36.765%;width:5.133%;height:4.996%"></div>
+          <div class="pc a3 wakame" data-s="3" style="left:74.417%;top:33.384%;width:6.417%;height:9.084%;background-size:1702.597% 1175.833%;background-position:0.000% 100.000%"></div>
+          <div class="ps" data-s="3" style="left:71.084%;top:50.613%;width:5.800%;height:2.873%"></div>
+          <div class="pc a3 wakame" data-s="3" style="left:68.750%;top:48.070%;width:7.250%;height:5.223%;background-size:1506.897% 2044.928%;background-position:28.922% 96.200%"></div>
+          <div class="ps" data-s="3" style="left:34.621%;top:76.452%;width:23.933%;height:12.407%"></div>
+          <div class="pc a3 wakame" data-s="3" style="left:32.000%;top:68.887%;width:29.917%;height:22.559%;background-size:365.181% 473.490%;background-position:99.790% 52.650%"></div>
+          <div class="ps" data-s="3" style="left:43.439%;top:24.839%;width:8.000%;height:4.455%"></div>
+          <div class="pc a3 cabbage" data-s="3" style="left:41.667%;top:21.726%;width:10.000%;height:8.100%;background-size:1092.500% 1318.692%;background-position:6.633% 99.003%"></div>
+          <div class="ps" data-s="3" style="left:58.570%;top:72.117%;width:24.533%;height:11.783%"></div>
+          <div class="pc a3 cabbage" data-s="3" style="left:54.917%;top:68.206%;width:30.667%;height:21.423%;background-size:356.250% 498.587%;background-position:64.369% 88.918%"></div>
+          <div class="ps" data-s="3" style="left:22.297%;top:32.040%;width:22.267%;height:11.824%"></div>
+          <div class="pc a3 mango" data-s="3" style="left:19.417%;top:27.782%;width:27.833%;height:21.499%;background-size:392.515% 496.831%;background-position:27.738% 88.997%"></div>
+          <div class="ps" data-s="3" style="left:75.637%;top:56.173%;width:5.667%;height:3.830%"></div>
+          <div class="pc a3 mango" data-s="3" style="left:73.917%;top:53.444%;width:7.083%;height:6.964%;background-size:1542.353% 1533.696%;background-position:16.395% 97.877%"></div>
+          <div class="ps" data-s="3" style="left:19.143%;top:68.901%;width:17.467%;height:10.492%"></div>
+          <div class="pc a3 mango" data-s="3" style="left:16.500%;top:63.437%;width:21.833%;height:19.076%;background-size:500.382% 559.921%;background-position:93.136% 86.540%"></div>
+          <img class="rl" data-s="3" src="assets/img/bb2-r3.webp" style="left:6.583%;top:0.000%;width:93.417%;height:93.414%" alt="" decoding="async">
+          <div class="ps" data-s="4" style="left:13.478%;top:52.231%;width:16.400%;height:13.531%"></div>
+          <div class="pc a4 scoop" data-s="4" style="left:11.000%;top:44.587%;width:20.500%;height:24.603%;background-size:539.837% 493.846%;background-position:0.000% 0.000%"></div>
+          <div class="pc a4 spr" data-s="4" style="left:40.000%;top:24.603%;width:19.417%;height:11.809%;background-size:569.957% 1028.846%;background-position:49.315% 73.085%"></div>
+          <div class="pc a4 spr" data-s="4" style="left:29.417%;top:32.930%;width:21.000%;height:19.076%;background-size:526.984% 636.905%;background-position:47.026% 24.169%"></div>
+          <div class="pc a4 spr" data-s="4" style="left:40.583%;top:31.037%;width:23.333%;height:19.682%;background-size:474.286% 617.308%;background-position:21.374% 24.312%"></div>
+          <div class="pc a4 spr" data-s="4" style="left:22.250%;top:41.105%;width:23.417%;height:22.861%;background-size:472.598% 531.457%;background-position:66.762% 0.000%"></div>
+          <div class="pc a4 spr" data-s="4" style="left:49.083%;top:41.332%;width:24.250%;height:14.913%;background-size:456.357% 814.721%;background-position:54.581% 59.943%"></div>
+          <div class="pc a4 spr" data-s="4" style="left:46.500%;top:52.839%;width:22.000%;height:19.076%;background-size:503.030% 636.905%;background-position:71.429% 24.169%"></div>
+          <div class="pc a4 spr" data-s="4" style="left:26.667%;top:54.277%;width:23.750%;height:21.953%;background-size:465.965% 553.448%;background-position:94.151% 0.000%"></div>
+          <div class="pc a4 spr" data-s="4" style="left:62.000%;top:53.142%;width:18.083%;height:17.184%;background-size:611.982% 707.048%;background-position:47.345% 44.412%"></div>
+          <div class="pc a4 dz" data-s="4" style="left:45.750%;top:24.981%;width:12.917%;height:9.463%;background-size:856.774% 1284.000%;background-position:92.498% 83.514%"></div>
+          <div class="pc a4 dz" data-s="4" style="left:37.333%;top:28.766%;width:23.083%;height:11.279%;background-size:479.422% 1077.181%;background-position:73.739% 72.734%"></div>
+          <div class="pc a4 dz" data-s="4" style="left:37.333%;top:32.778%;width:23.083%;height:9.463%;background-size:479.422% 1284.000%;background-position:0.000% 93.378%"></div>
+          <div class="pc a4 dz" data-s="4" style="left:40.833%;top:38.002%;width:10.000%;height:9.235%;background-size:1106.667% 1315.574%;background-position:23.096% 93.189%"></div>
+          <div class="pc a4 dz" data-s="4" style="left:33.417%;top:34.898%;width:18.333%;height:15.216%;background-size:603.636% 798.507%;background-position:31.047% 60.114%"></div>
+          <div class="pc a4 dz" data-s="4" style="left:30.000%;top:37.245%;width:9.000%;height:9.084%;background-size:1229.630% 1337.500%;background-position:32.869% 93.064%"></div>
+          <div class="pc a4 dz" data-s="4" style="left:30.083%;top:42.241%;width:12.417%;height:9.538%;background-size:891.275% 1273.810%;background-position:79.220% 83.570%"></div>
+          <div class="pc a4 dz" data-s="4" style="left:24.583%;top:44.058%;width:18.083%;height:10.901%;background-size:611.982% 1114.583%;background-position:94.869% 72.485%"></div>
+          <div class="pc a4 dz" data-s="4" style="left:24.583%;top:45.193%;width:17.500%;height:10.447%;background-size:632.381% 1163.043%;background-position:18.068% 84.254%"></div>
+          <div class="pc a4 dz" data-s="4" style="left:27.417%;top:40.273%;width:33.667%;height:17.033%;background-size:328.713% 713.333%;background-position:80.628% 44.348%"></div>
+          <div class="pc a4 dz" data-s="4" style="left:50.667%;top:40.273%;width:13.833%;height:10.220%;background-size:800.000% 1188.889%;background-position:35.628% 84.082%"></div>
+          <div class="pc a4 dz" data-s="4" style="left:51.500%;top:43.755%;width:17.417%;height:12.945%;background-size:635.407% 938.596%;background-position:29.401% 73.849%"></div>
+          <div class="pc a4 dz" data-s="4" style="left:50.667%;top:40.954%;width:18.500%;height:21.423%;background-size:598.198% 567.138%;background-position:0.000% 24.735%"></div>
+          <div class="pc a4 dz" data-s="4" style="left:32.750%;top:40.954%;width:37.417%;height:24.375%;background-size:295.768% 498.447%;background-position:28.214% 0.000%"></div>
+          <div class="pc a4 dz" data-s="4" style="left:31.167%;top:50.416%;width:38.917%;height:14.913%;background-size:284.368% 814.721%;background-position:99.768% 59.943%"></div>
+          <div class="pc a4 dz" data-s="4" style="left:31.083%;top:58.668%;width:16.667%;height:10.901%;background-size:664.000% 1114.583%;background-position:0.000% 84.600%"></div>
+          <div class="pc a4 dz" data-s="4" style="left:28.750%;top:56.472%;width:27.250%;height:13.248%;background-size:406.116% 917.143%;background-position:0.000% 74.056%"></div>
+          <div class="pc a4 dz" data-s="4" style="left:27.500%;top:56.472%;width:28.500%;height:16.124%;background-size:388.304% 753.521%;background-position:0.000% 60.632%"></div>
+          <div class="pc a4 dz" data-s="4" style="left:29.417%;top:55.715%;width:43.667%;height:17.411%;background-size:253.435% 697.826%;background-position:0.000% 44.509%"></div>
+          <div class="pc a4 dz" data-s="4" style="left:54.667%;top:55.715%;width:19.583%;height:8.630%;background-size:565.106% 1407.895%;background-position:78.042% 92.689%"></div>
+          <div class="pc a4 dz" data-s="4" style="left:57.417%;top:60.030%;width:16.833%;height:8.100%;background-size:657.426% 1500.000%;background-position:96.803% 92.256%"></div>
+          <div class="pc a4 dz" data-s="4" style="left:44.333%;top:61.998%;width:28.333%;height:9.084%;background-size:390.588% 1337.500%;background-position:51.721% 93.064%"></div>
+          <div class="pc a4 dz" data-s="4" style="left:41.417%;top:66.843%;width:17.167%;height:7.267%;background-size:644.660% 1671.875%;background-position:0.000% 100.000%"></div>
+          <div class="pc a4 dz" data-s="4" style="left:35.167%;top:68.509%;width:9.500%;height:7.116%;background-size:1164.912% 1707.447%;background-position:17.133% 99.868%"></div>
+          <div class="pc a4 dz" data-s="4" style="left:34.917%;top:64.042%;width:29.167%;height:10.144%;background-size:379.429% 1197.761%;background-position:59.509% 84.024%"></div>
+          <div class="pc a4 dz" data-s="4" style="left:54.500%;top:64.118%;width:12.417%;height:5.829%;background-size:891.275% 2084.416%;background-position:27.481% 98.757%"></div>
+          <img class="rl" data-s="4" src="assets/img/bb2-r4.webp" style="left:10.750%;top:24.224%;width:69.583%;height:52.233%" alt="" decoding="async">
+          <img class="fin" src="assets/img/bowl-hero.webp" width="1200" height="1321" alt="" decoding="async">
+          <img class="chop" src="assets/img/bb2-chop.webp" style="left:43.500%;top:0.000%;width:56.500%;height:81.378%" alt="" decoding="async">
+        </div>
+      </div>
+      <ol class="legend"><li>Rice</li><li>Protein</li><li>Greens &amp; crunch</li><li>Sauce &amp; topping</li></ol>
+    </div>
+    <ol class="steps" role="list">
+      <li class="step" data-i="1">
+        <p class="cap">Step 01 <em>/ 04</em></p>
+        <h3 class="d">Start with rice.</h3>
+        <p class="fav">White or brown, steamed fresh. Or swap it for greens.</p>
+      </li>
+      <li class="step" data-i="2">
+        <p class="cap">Step 02 <em>/ 04</em></p>
+        <h3 class="d">Add the good stuff.</h3>
+        <p>Tempura shrimp, beef, chicken or dumplings. Cooked hot, served straight away.</p>
+      </li>
+      <li class="step" data-i="3">
+        <p class="cap">Step 03 <em>/ 04</em></p>
+        <h3 class="d long">Pile on the crunch and vitamins.</h3>
+        <p>Pickles, fresh veg and a little heat.</p>
+      </li>
+      <li class="step" data-i="4">
+        <p class="cap">Step 04 <em>/ 04</em></p>
+        <h3 class="d long">Finish it properly.</h3>
+        <p class="fav">Every bowl gets its own sauce. No two taste the same.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<div class="band" aria-hidden="true"><div class="track">
+  <span class="d">Asian bowls. Made to order. <span class="k">ボウル</span> Hot, fresh, filling. <span class="k">ボウル</span></span><span class="d">Asian bowls. Made to order. <span class="k">ボウル</span> Hot, fresh, filling. <span class="k">ボウル</span></span>
+  <span class="d">Asian bowls. Made to order. <span class="k">ボウル</span> Hot, fresh, filling. <span class="k">ボウル</span></span><span class="d">Asian bowls. Made to order. <span class="k">ボウル</span> Hot, fresh, filling. <span class="k">ボウル</span></span>
 </div></div>
 
-<section class="pillars" id="bowls">
-  <div class="wrap">
-    <div class="head">
-      <div><div class="eyebrow">Why a bowl</div><h2>Everything a bowl<br class="dk"> should be.</h2></div>
-      <p>Fresh and healthy, yet properly filling. One bowl, one complete meal.</p>
-    </div>
-    <ul class="cards">
-      <li class="card"><img src="assets/img/bowl-chicken.webp" alt="Colourful Bōru rice bowl" loading="lazy" width="760" height="836"><div class="n">01</div><h3>Built<br>on rice.</h3><p>Every bowl starts here.</p></li>
-      <li class="card"><img src="assets/img/bowl-salmon.webp" alt="Colourful Bōru rice bowl" loading="lazy" width="760" height="863"><div class="n">02</div><h3>Made<br>to order.</h3><p>Fresh, colourful, fast.</p></li>
-      <li class="card"><img src="assets/img/bowl-meat.webp" alt="Colourful Bōru rice bowl" loading="lazy" width="760" height="615"><div class="n">03</div><h3>Light on you.<br>Big on food.</h3><p>Healthy, and properly filling.</p></li>
-    </ul>
+<section class="menu grain" id="menu" aria-labelledby="menu-h">
+  <p class="num"><b>№ 02</b> The menu</p>
+  <h2 class="d" id="menu-h">Eight bowls. <span class="s">Pick a favourite.</span></h2>
+  <div class="cluster" aria-hidden="true">
+    <figure class="f1"><img src="assets/img/bowl-chicken.webp" width="760" height="836" alt="" loading="lazy" decoding="async"><figcaption><b>Fig. 1</b><span>Tempura Shrimp</span><span class="fd">Golden, crisp and gone in minutes.</span></figcaption></figure>
+    <figure class="f2"><img src="assets/img/bowl-veggie.webp" width="760" height="762" alt="" loading="lazy" decoding="async"><figcaption><b>Fig. 2</b><span>Vegetarian Dumplings</span><span class="fd">Soft dumplings, big flavour, zero meat.</span></figcaption></figure>
+    <figure class="f3"><img src="assets/img/bowl-meat.webp" width="760" height="615" alt="" loading="lazy" decoding="async"><figcaption><b>Fig. 3</b><span>Beef</span><span class="fd">Tender, rich and seriously satisfying.</span></figcaption></figure>
   </div>
+  <div class="sides"><span class="plus" aria-hidden="true">+</span><span class="s">Sides and drinks</span><p class="sides-list">Kimchi, spring rolls, Karaage, Dumplings, Japanese sodas</p></div>
 </section>
 
-<section class="how" id="how">
-  <div class="wrap how__grid">
-    <div>
-      <div class="eyebrow">How it works</div>
-      <h2>Simple<br>by design.</h2>
-      <p class="how__lead">A short menu of bowls, plus sides and drinks. Eat in, or take it with you.</p>
-      <ol class="steps">
-        <li class="step"><b>1</b><div><h3>Pick a bowl</h3><p>Choose from a short, focused menu.</p></div></li>
-        <li class="step"><b>2</b><div><h3>Add sides and drinks</h3><p>Round off your meal.</p></div></li>
-        <li class="step"><b>3</b><div><h3>Eat in or take away</h3><p>Made to order, ready when you are.</p></div></li>
-      </ol>
-    </div>
-    <figure class="how__photo"><img src="assets/img/photo-how.webp" alt="A Bōru rice bowl with chopsticks on a wooden table" loading="lazy" width="900" height="1125"><figcaption>Dine-in &amp; takeaway</figcaption></figure>
-  </div>
+<section class="dine grain" aria-labelledby="dine-h">
+  <p class="num"><b>№ 03</b> Sit down or take it to go.</p>
+  <h2 class="sr" id="dine-h">Sit down or take it to go.</h2>
+  <img class="bowl2" src="assets/img/bowl-salmon.webp" width="760" height="863" alt="" loading="lazy" decoding="async">
+  <p class="d w1" aria-hidden="true">Dine in.</p>
+  <p class="d sl" aria-hidden="true">/</p>
+  <p class="d w2" aria-hidden="true"><span class="s">Take</span> away.</p>
+  <p class="body">Grab a seat in the mall, or carry it back to work. It travels well.</p>
 </section>
 
-<footer class="foot" id="contact">
-  <div class="wrap">
-    <div class="foot__top">
-      <h2>Opening 2027.<br><em>See you soon.</em></h2>
-    </div>
-    <div class="foot__bar"><img src="assets/img/wordmark-cream.webp" alt="Bōru" width="520" height="178" loading="lazy"><span>Opening 2027 · UAE</span><span>© 2026 Bōru</span></div>
+<section class="finale dark grain" id="visit" aria-labelledby="fin-h">
+  <p class="num"><b>№ 04</b> Coming soon</p>
+  <p class="d yr" aria-hidden="true">2027<span class="k">ボウル</span></p>
+  <div class="fin-row">
+    <h2 class="d" id="fin-h">Opening in <span class="s">the UAE, 2027.</span></h2>
+    <p>Your next lunch spot is on its way.</p>
   </div>
-</footer>
+  <div class="legal"><img src="assets/img/wordmark-cream.webp" width="240" height="82" alt="Boru" loading="lazy"><span>Opening 2027 · UAE · Dine in &amp; take away</span><a class="mail" href="mailto:geoffrey@eatboru.ae">geoffrey@eatboru.ae</a><span>© 2026 Boru</span></div>
+</section>
+</main>
+
+<script>
+(function(){
+  var d=document.documentElement; d.classList.add('js');
+  var stage=document.querySelector('.stage'), steps=[].slice.call(document.querySelectorAll('.step'));
+  function set(i){stage.setAttribute('data-step',i);steps.forEach(function(s){s.classList.toggle('on',+s.dataset.i===i)})}
+  set(1);
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)set(+e.target.dataset.i)})},{rootMargin:matchMedia('(max-width:820px)').matches?'-88% 0px -10% 0px':'-45% 0px -45% 0px'});
+    steps.forEach(function(s){io.observe(s)});
+  }
+  var rm=window.matchMedia('(prefers-reduced-motion: reduce)'), spin=document.getElementById('spin'), t=0;
+  function tick(){t=0;var y=Math.min(window.scrollY,1400);spin.style.transform='rotate('+(y*0.045)+'deg)'}
+  window.addEventListener('scroll',function(){if(!rm.matches&&!t){t=requestAnimationFrame(tick)}},{passive:true});
+})();
+</script>
+<script src="assets/js/gsap.min.js"></script>
+<script src="assets/js/ScrollTrigger.min.js"></script>
+<script>
+/* № 01 — the hero bowl builds itself: pieces cut from the real photo fall in and land exactly where they sit in the photo, scrubbed to scroll (forward and back). Reduced motion / no JS: finished bowl. */
+(function(){
+  /* mobile: step copy gets its own panel under the bowl (clones of the real step text; originals stay in the DOM) */
+  (function(){
+    var stg=document.querySelector('.stage'); if(!stg||stg.querySelector('.tx'))return;
+    var tx=document.createElement('div'); tx.className='tx';
+    [].slice.call(document.querySelectorAll('.steps .step')).forEach(function(st){
+      var d=document.createElement('div'); d.className='step t t'+st.dataset.i; d.innerHTML=st.innerHTML; tx.appendChild(d);
+    });
+    stg.appendChild(tx);
+  })();
+  if(!window.gsap||!window.ScrollTrigger)return;
+  gsap.registerPlugin(ScrollTrigger);
+  var plate=document.querySelector('.stage .plate'); if(!plate)return;
+  var bw=plate.querySelector('.bw'), sh=plate.querySelector('.sh'), fin=plate.querySelector('.fin'), steps=[].slice.call(document.querySelectorAll('.steps .step'));
+  var q=function(s){return [].slice.call(plate.querySelectorAll(s))};
+  var seed=7; function rnd(a,b){seed=(seed*16807)%2147483647;return a+(b-a)*((seed-1)/2147483646)}
+  var GAP={1:.07,2:.11,3:.07}, DUR={1:.5,2:.5,3:.46};
+  var mm=gsap.matchMedia();
+  mm.add({all:'all',mob:'(max-width:820px)',rm:'(prefers-reduced-motion: reduce)'},function(c){
+    if(c.conditions.rm){
+      /* reduced motion: the finished bowl, faded in once */
+      gsap.set(q('.pc,.ps,.rl'),{autoAlpha:0}); gsap.set(fin,{autoAlpha:1});
+      gsap.fromTo(bw,{autoAlpha:0},{autoAlpha:1,duration:.8,ease:'none',scrollTrigger:{trigger:plate,start:'top 85%',once:true}});
+      return;
+    }
+    var mob=c.conditions.mob; seed=7;
+    gsap.set(fin,{autoAlpha:0});
+    function trig(st,s){return {trigger:st,scrub:mob?.5:.7,invalidateOnRefresh:true,
+        start:s===1?(mob?'top 104%':'top 82%'):(mob?'top 97%':'top 92%'),
+        end:s===1?(mob?'top 30%':'top 6%'):(mob?'top 38%':'top 20%')}}
+    function dip(tl,lt,k){
+      tl.to(bw,{yPercent:.6*k,scaleY:1-.007*k,duration:.05,ease:'power1.out'},lt)
+        .to(bw,{yPercent:0,scaleY:1,duration:.3,ease:'back.out(2.6)'},lt+.05)
+        .to(sh,{scale:1-.018*k,duration:.05},lt).to(sh,{scale:1,duration:.3},lt+.05);
+    }
+    function drop(tl,el,ps,t,d,extra,rot,k){
+      tl.set(el,{autoAlpha:1,zIndex:6},t)
+        .set(el,{zIndex:'auto'},t+d*.8)
+        .fromTo(el,{y:function(){return -(plate.offsetTop+el.offsetTop+el.offsetHeight*1.1+40+innerHeight*extra)}},{y:0,duration:d,ease:'power2.in'},t)
+        .fromTo(el,{rotation:rot},{rotation:0,duration:d,ease:'sine.out'},t)
+        .to(el,{scaleX:1+.03*k,scaleY:1-.06*k,duration:.045,ease:'power1.out'},t+d)
+        .to(el,{scaleX:1,scaleY:1,duration:.26,ease:'back.out(2.8)'},t+d+.045);
+      if(ps) tl.fromTo(ps,{autoAlpha:0,scale:1.35},{autoAlpha:.55,scale:1,duration:d*.6,ease:'power1.in'},t+d*.4)
+               .to(ps,{autoAlpha:0,duration:.18,ease:'none'},t+d+.04);
+    }
+    steps.forEach(function(st,si){
+      var s=si+1, rl=q('.rl[data-s="'+s+'"]'), tl=gsap.timeline({scrollTrigger:trig(st,s)});
+      if(rl.length)gsap.set(rl,{autoAlpha:0});
+      if(s<4){
+        var els=q('.pc[data-s="'+s+'"]'), d=DUR[s], extra=s===1?.4:0, last=0;
+        gsap.set(els,{autoAlpha:0}); gsap.set(q('.ps[data-s="'+s+'"]'),{autoAlpha:0});
+        els.forEach(function(el,i){
+          var t=i*GAP[s]+rnd(0,.025), ps=el.previousElementSibling&&el.previousElementSibling.classList.contains('ps')?el.previousElementSibling:null;
+          drop(tl,el,ps,t,d,extra,rnd(-22,22),s===3?.6:1);
+          if(s===2||i%3===0||i===els.length-1) dip(tl,t+d,s===2?1:.6);
+          last=Math.max(last,t+d);
+        });
+        tl.to(rl,{autoAlpha:1,duration:.2,ease:'none'},last+.06).set(els,{autoAlpha:0},last+.3);
+        tl.to({},{duration:.06},last+.3);
+        return;
+      }
+      /* step 4: sauce scoop plops, the mayo is piped on along its strands, then the crispy toppings are scattered */
+      var sc=q('.pc.scoop'), dz=q('.pc.dz'), sp=q('.pc.spr'), sps=q('.ps[data-s="4"]');
+      gsap.set(sc.concat(dz,sp),{autoAlpha:0}); gsap.set(sps,{autoAlpha:0});
+      sc.forEach(function(el){drop(tl,el,sps[0],0,.42,0,-10,1.4); dip(tl,.42,.8)});
+      var t0=.5, span=.62;
+      dz.forEach(function(el,i){
+        var t=t0+span*i/dz.length;
+        tl.fromTo(el,{autoAlpha:0,y:'-1.2%'},{autoAlpha:1,y:0,duration:.07,ease:'power1.out'},t);
+      });
+      sp.forEach(function(el,i){
+        var t=t0+.28+i*.055+rnd(0,.02);
+        tl.fromTo(el,{autoAlpha:0,y:'-7%',scale:1.04},{autoAlpha:1,y:0,scale:1,duration:.18,ease:'power2.in'},t);
+      });
+      var end=t0+.28+sp.length*.055+.2;
+      dip(tl,end-.02,.4);
+      tl.to(rl,{autoAlpha:1,duration:.12,ease:'none'},end+.04).set(sc.concat(dz,sp),{autoAlpha:0},end+.18).to({},{duration:.05},end+.18);
+    });
+  });
+})();
+</script>
 </body>
 </html>
