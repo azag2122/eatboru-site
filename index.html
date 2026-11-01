@@ -138,17 +138,19 @@ a{color:inherit}
 .sides .s{font-size:clamp(40px,4.4vw,72px);line-height:1}
 .sides .sides-list{flex-basis:100%;margin:-6px 0 0 calc(clamp(40px,4.4vw,72px)*.62 + 24px);font-size:clamp(18px,1.5vw,24px);line-height:1.35;opacity:.85}
 .sides .plus{font-family:Brico;font-weight:800;font-size:clamp(40px,4.4vw,72px);color:var(--pers);line-height:.8}
-.cluster{grid-column:8/-1;grid-row:2/span 4;position:relative;min-height:700px}
-.cluster figure{position:absolute;margin:0}
+.menu{grid-template-rows:auto auto auto 1fr}
+/* bowl cluster: in-flow grid (not absolute), so the section grows with it and nothing spills past the viewport */
+.cluster{grid-column:8/-1;grid-row:2/span 3;align-self:start;justify-self:end;width:100%;max-width:780px;position:relative;display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(16px,2vw,36px);align-items:start}
+.cluster figure{position:relative;min-width:0;margin:0}
 .cluster figcaption{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;margin-top:10px;display:flex;gap:10px}
 .cluster figcaption b{color:var(--pers);font-weight:600}
 .cluster figcaption{flex-wrap:wrap}
 .cluster figcaption>span:not(.fd){flex:1 1 0;min-width:0}
 .cluster figcaption .fd{flex-basis:100%;font-family:Instr,Georgia,serif;font-style:italic;font-weight:400;text-transform:none;letter-spacing:0;font-size:clamp(17px,1.4vw,22px);line-height:1.2;margin-top:2px}
-.f1{width:80%;right:-10%;top:-2%;display:flex;flex-direction:column-reverse}
-.f1 figcaption{margin:0 0 10px 14%}
-.f2{width:46%;left:-8%;top:56%}
-.f3{width:36%;right:0;top:82%}
+.cluster .f1{grid-column:1/-1;justify-self:end;width:86%;display:flex;flex-direction:column-reverse}
+.f1 figcaption{margin:0 0 12px 14%}
+.cluster .f2{grid-column:1;width:94%;margin-top:-20%;z-index:1}
+.cluster .f3{grid-column:2;justify-self:end;width:76%;margin-top:10%}
 .cluster img{filter:drop-shadow(0 24px 24px rgba(9,24,47,.22))}
 /* ---------- DINE ---------- */
 .dine{background:var(--sage);color:var(--navy);padding:clamp(80px,10vw,150px) var(--pad);display:grid;grid-template-columns:repeat(12,1fr);column-gap:20px;overflow:hidden;position:relative}
@@ -212,13 +214,14 @@ a{color:inherit}
  .menu h2{font-size:21vw}
  .menu .copy{margin-top:28px}
  .menu h2 .s{white-space:normal;font-size:.56em;margin-left:0}
- .cluster{grid-row:auto;min-height:0;height:136vw;margin-top:36px}
+ .menu{grid-template-rows:none}
+ .cluster{grid-row:auto;justify-self:center;max-width:620px;margin-top:36px}
  .dine .num{padding-right:30vw}
  .dine .num b{flex:none}
- .f1{width:86%;right:-12%;top:0}
+ .cluster .f1{width:90%}
  .f1 figcaption{margin-left:0}
- .f2{width:52%;left:-4%;top:58%}
- .f3{width:40%;right:0;top:78%}
+ .cluster .f2{width:100%;margin-top:-16%}
+ .cluster .f3{width:86%;margin-top:12%}
  .sides{grid-row:auto;flex-wrap:wrap;gap:14px;margin-top:104px}
  .dine .w1,.dine .w2{font-size:21vw}
  .dine .bowl2{width:40vw;right:-12vw;top:24px}
